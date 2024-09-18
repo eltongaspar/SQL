@@ -1,0 +1,10 @@
+Entar no Totvs 
+
+Programa inicial 
+U_ZTELAFAT
+
+Comunicacao Cliente 
+TCP
+
+Ambeinte Servidor 
+IX34HR_PRD
