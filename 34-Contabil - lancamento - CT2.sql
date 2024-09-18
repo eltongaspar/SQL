@@ -1,0 +1,2 @@
+Select CT2_ZZDOC, * From CT2010
+Where CT2_FILIAL = 'BA02' and CT2_DATA = '20211223' and CT2_VALOR = '19.64' and CT2_ZZDOC = '000090187' and D_E_L_E_T_=''

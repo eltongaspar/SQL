@@ -1,0 +1,7 @@
+-- Alterar Contas Debito / Credito 
+-- CT2 - Lançamentos Contabeis
+
+SELECT * FROM CT2010 
+WHERE CT2_DEBITO='1103010100' AND CT2_LOTE='008820' AND CT2_DATA >='20211223' AND D_E_L_E_T_='' 
+AND CT2_HIST LIKE '%PAG.DOC.%' AND CT2_CCD <> '100506'
+
