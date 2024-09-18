@@ -1,0 +1,6 @@
+RH - Horarios e Jornadas
+SP9 - EVENTOS
+SP4 - TIPO DE HORA EXTRA
+SR6 - TURNO
+SPJ - HORARIO PADRAO
+S044 - Tabela de IR para PLR
