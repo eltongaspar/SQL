@@ -1,0 +1,4 @@
+-- Consulta tempo user
+
+
+SELECT * FROM SYS_USR WHERE USR_MSBLQL='2' AND USR_TIMEOUT<>0

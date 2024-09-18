@@ -1,0 +1,21 @@
+Fonte SBWFPC
+
+
+ZZ_ENVWFPV - esse parametro com conteúdo = 1, Habilita o envio de pedido para cliente e vendedor (parametro por filial), 2 - desabilita
+
+----------------------------------------------------------------------------------------------
+Se precisar mandar pra mais alguém além de vendedor e cliente, usar os parametros abaixo (por filial)
+
+ZZ_WFPVEM1 e ZZ_WFPVEM2 - basta colocar os e-mails separados por ponto e virgula, são 2 parametros pro caso 
+			de querer usar vários e-mails
+
+Sintaxe:
+o 1 primeiro parâmetro coloca ;email;outroemail
+e no segundo parâmetro ;email;outroemail
+
+----------------------------------------------------------------------------------------------
+para os responsáveis por amostra também receberem copia dos pedidos de venda, criar de modo exclusivo os parametros abaixo:
+
+parametros cfops amostra (5911;6911;7949) - definir os cfops nesse parametro - ZZ_WFCFOAM
+
+ZZ_WFPVEM3 - basta colocar os e-mails separados por ponto e virgula
