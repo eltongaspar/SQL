@@ -1,0 +1,26 @@
+-- Elimina Residuo PC - Percentual
+Declare @PERCENT Float, @QUJE Float, @QUANT Float, @FILIAL VARCHAR(4), @NUMPED VARCHAR(6);
+SET @FILIAL = 'BA06'
+SET @NUMPED = '009429'
+SET @QUJE = (SELECT C7_QUJE FROM SC7010 WHERE C7_FILIAL=@FILIAL AND C7_NUM=@NUMPED)
+SET @QUANT = (SELECT C7_QUANT FROM SC7010 WHERE C7_FILIAL=@FILIAL AND C7_NUM=@NUMPED)
+SET @PERCENT = @QUJE/@QUANT*100
+SELECT C7_QUANT, C7_QUJE, @PERCENT AS PERCENTUAL, C7_RESIDUO,C7_ENCER, *,
+	Case 
+	When @PERCENT >= '90' Then 'PC C/ +90%'
+	Else 'Em andamento'
+	End AS Status_,
+
+	Case C7_RESIDUO 
+	When 'S' Then 'Finalizado'
+	Else 'Aberto'
+	End RESIDUO,
+
+	Case C7_ENCER
+	When 'E' Then 'Encerrado'
+	Else 'Não Encerrado'
+	End Encerrado
+
+	
+FROM SC7010 
+WHERE C7_FILIAL=@FILIAL AND C7_NUM=@NUMPED

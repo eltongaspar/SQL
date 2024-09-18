@@ -1,0 +1,3 @@
+-- SCR - Alçada de aprovação - Campo Obs. Criptografia - Camnpo Memo 
+SELECT ISNULL(CONVERT(VARCHAR(2047), CONVERT(VARBINARY(2047), CR_OBS)),'') Obs,*  
+FROM SCR010 WHERE CR_FILIAL='BA02' AND CR_NUM='009217'
