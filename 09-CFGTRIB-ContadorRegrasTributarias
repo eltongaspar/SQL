@@ -1,0 +1,58 @@
+-- ==========================================================
+-- Contagem de registros - Configurador de Tributos (Protheus)
+-- ==========================================================
+
+-- Regras Fiscais / Cadastros
+Select Count(*) As TABELA_PROGRESSIVA   From CIQ010 Where D_E_L_E_T_ = '';
+Select Count(*) As DEPENDENTES          From CIV010 Where D_E_L_E_T_ = '';
+
+-- Perfis
+Select Count(*) As PERFIL_PRODUTO_OPERACOES_PARTICIPANTES From F20010 Where D_E_L_E_T_ = '' And F20_CODIGO > '000050';
+
+-- Regras de Cálculos Fiscais
+Select Count(*) As BASE_CALCULO         From F27010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_ALIQUOTAS      From F28010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_ESCRITURACAO   From CJ2010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_CALCULOS_FISCAIS From F2B010 Where D_E_L_E_T_ = '';
+
+-- Regras Financeiras
+Select Count(*) As REGRA_TITULOS            From FKL010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_DEDUCAO            From FKV010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_TABELA_PROGRESSIVA From FKS010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_TITULOS_FINANCEIROS From FKN010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_VENCIMENTO         From FKP010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_RETENCAO           From FKO010 Where D_E_L_E_T_ = '';
+Select Count(*) As REGRA_FINANCEIRA         From FKK010 Where D_E_L_E_T_ = '';
+
+-- ==========================================================
+-- Contagem de registros - Configurador de Tributos (Protheus)
+-- Resultado unico via UNION ALL
+-- ==========================================================
+
+Select 'TABELA_PROGRESSIVA' As TABELA, Count(*) As QUANTIDADE From CIQ010 Where D_E_L_E_T_ = ''
+Union All
+Select 'DEPENDENTES', Count(*) From CIV010 Where D_E_L_E_T_ = ''
+Union All
+Select 'PERFIL_PRODUTO_OPERACOES_PARTICIPANTES', Count(*) From F20010 Where D_E_L_E_T_ = '' And F20_CODIGO > '000050'
+Union All
+Select 'BASE_CALCULO', Count(*) From F27010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_ALIQUOTAS', Count(*) From F28010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_ESCRITURACAO', Count(*) From CJ2010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_CALCULOS_FISCAIS', Count(*) From F2B010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_TITULOS', Count(*) From FKL010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_DEDUCAO', Count(*) From FKV010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_TABELA_PROGRESSIVA', Count(*) From FKS010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_TITULOS_FINANCEIROS', Count(*) From FKN010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_VENCIMENTO', Count(*) From FKP010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_RETENCAO', Count(*) From FKO010 Where D_E_L_E_T_ = ''
+Union All
+Select 'REGRA_FINANCEIRA', Count(*) From FKK010 Where D_E_L_E_T_ = '';
